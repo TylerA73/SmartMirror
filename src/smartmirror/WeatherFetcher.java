@@ -102,24 +102,6 @@ public class WeatherFetcher {
         return city;
     }
     
-    /**
-     * Runs to test that the fetcher successfully collects data from the API
-     * 
-     * @param args
-     * @throws IOException 
-     */
-    public static void main(String[] args) throws IOException{
-        Locator loc = new Locator();
-        WeatherFetcher wf = new WeatherFetcher(loc.getCity(), loc.getCountry());
-        City city = wf.getData();
-        
-        System.out.println(city.getCity());
-        System.out.println(city.getTemperature());
-        System.out.println(city.getDescription());
-        System.out.println(city.getHumidity());
-        
-    }
-    
     
     
 }
