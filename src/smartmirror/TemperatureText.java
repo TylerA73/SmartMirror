@@ -6,7 +6,12 @@
 package smartmirror;
 
 import java.io.IOException;
+import javafx.geometry.Pos;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 /**
@@ -15,18 +20,19 @@ import javafx.scene.text.Text;
  */
 public class TemperatureText extends Text{
     Locator loc;
-    
     City cityWeather;
+    String DEGREE;
     
     
     
     
     public TemperatureText() throws IOException{
-        
+        DEGREE = "\u00b0" + "C";
         loc = new Locator();
         setWeather(loc.getCity(), loc.getCountry());
-        setText(Double.toString(cityWeather.getTemperature()));
+        setText("\t\t" + Integer.toString((int)cityWeather.getTemperature()) + DEGREE);
         setFill(Color.WHITE);
+        setFont(Font.font("arial", FontWeight.THIN, FontPosture.REGULAR, 50));
         
         
         

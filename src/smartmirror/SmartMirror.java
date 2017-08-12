@@ -11,6 +11,7 @@ import java.util.Calendar;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.HPos;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -43,8 +44,8 @@ public class SmartMirror extends Application {
         DateDisplay dateText = new DateDisplay();
         TemperatureText temp = new TemperatureText();
         
-        FlowPane dt = new FlowPane();
-        dt.setOrientation(Orientation.VERTICAL);
+        FlowPane top = new FlowPane();
+        top.setOrientation(Orientation.VERTICAL);
         
         
         
@@ -52,10 +53,12 @@ public class SmartMirror extends Application {
         
         root.setStyle("-fx-background-color: black;");
         
-        dt.getChildren().add(timeText);
-        dt.getChildren().add(dateText);
+        top.getChildren().add(timeText);
+        top.getChildren().add(dateText);
+        top.getChildren().add(new Text("\n"));
+        top.getChildren().add(temp);
         
-        root.setTop(dt);
+        root.setTop(top);
         
         Scene scene = new Scene(root, 500, 500);
         

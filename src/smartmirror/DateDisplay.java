@@ -47,7 +47,7 @@ class DateDisplay extends Text {
             
             String year = (date.getTime().getYear()+ 1900) + "";
      
-            setText("\t" + month + day + year);
+            setText("\t\t\t\t" + month + day + year);
           }
         }
       ),
