@@ -25,11 +25,13 @@ public class SmartMirror extends Application {
         
         StackPane root = new StackPane();
         
-        Scene scene = new Scene(root, 300, 250);
+        Scene scene = new Scene(root, 500, 500);
         
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("Smart Mirror");
         primaryStage.setScene(scene);
+        primaryStage.setFullScreen(true);
         primaryStage.show();
+        
     }
 
     /**
