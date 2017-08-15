@@ -5,12 +5,9 @@
  */
 package smartmirror;
 
-import java.io.IOException;
-import java.net.URL;
 import java.text.DateFormatSymbols;
 import javafx.animation.*;
 import javafx.event.*;
-import javafx.scene.control.Label;
 import javafx.util.Duration;
 
 import java.util.Calendar;
@@ -21,39 +18,47 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 /**
+ * DateDisplay to display the current date. Extends the Text class.
  *
  * @author Tyler
  */
 class DateDisplay extends Text {
-  public DateDisplay() {
-    bindToTime();
-    setFill(Color.WHITE);
-    setFont(Font.font("arial", FontWeight.THIN, FontPosture.REGULAR, 25));
-  }
 
-  // the digital clock updates once a second.
-  private void bindToTime() {
-    Timeline timeline = new Timeline(
-      new KeyFrame(Duration.seconds(0),
-        new EventHandler<ActionEvent>() {
-          @Override public void handle(ActionEvent actionEvent) {
-            Calendar date = Calendar.getInstance();
-            DateFormatSymbols dfs = new DateFormatSymbols();
-            String[] months = dfs.getMonths();
-            
-            String month = months[date.getTime().getMonth()] + " ";
-            
-            String day = date.getTime().getDate() + ", ";
+    /**
+     * Constructor for the DateDisplay.
+     */
+    public DateDisplay() {
+        bindToTime();
+        setFill(Color.WHITE);
+        setFont(Font.font("arial", FontWeight.THIN, FontPosture.REGULAR, 25));
+    }
 
-            String year = (date.getTime().getYear()+ 1900) + "";
-     
-            setText("\t\t\t\t" + month + day + year);
-          }
-        }
-      ),
-      new KeyFrame(Duration.seconds(1))
-    );
-    timeline.setCycleCount(Animation.INDEFINITE);
-    timeline.play();
-  }
+    /**
+     * Binds the update of the display to time, checking it for updates every second.
+     */
+    private void bindToTime() {
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(0),
+                        new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent actionEvent) {
+                        Calendar date = Calendar.getInstance();
+                        DateFormatSymbols dfs = new DateFormatSymbols();
+                        String[] months = dfs.getMonths();
+
+                        String month = months[date.getTime().getMonth()] + " ";
+
+                        String day = date.getTime().getDate() + ", ";
+
+                        String year = (date.getTime().getYear() + 1900) + "";
+
+                        setText("\t\t\t\t" + month + day + year);
+                    }
+                }
+                ),
+                new KeyFrame(Duration.seconds(1))
+        );
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
+    }
 }

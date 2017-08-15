@@ -5,11 +5,8 @@
  */
 package smartmirror;
 
-import java.io.IOException;
-import java.net.URL;
 import javafx.animation.*;
 import javafx.event.*;
-import javafx.scene.control.Label;
 import javafx.util.Duration;
 
 import java.util.Calendar;
@@ -20,7 +17,8 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 /**
- *
+ * DigitalClock class to display the current time. Updates every second.
+ * 
  * @author Tyler
  */
 class DigitalClock extends Text {
@@ -30,7 +28,9 @@ class DigitalClock extends Text {
     setFont(Font.font("arial", FontWeight.THIN, FontPosture.REGULAR, 100));
   }
 
-  // the digital clock updates once a second.
+  /**
+   * Binds the clock to time, checking for updates every second.
+   */
   private void bindToTime() {
     Timeline timeline = new Timeline(
       new KeyFrame(Duration.seconds(0),

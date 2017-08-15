@@ -6,8 +6,6 @@
 package smartmirror;
 
 import java.io.IOException;
-import javafx.geometry.Pos;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
@@ -15,7 +13,8 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 /**
- *
+ * Display for the current temperature. Extends the Text class.
+ * 
  * @author Tyler
  */
 public class TemperatureText extends Text{
@@ -25,7 +24,11 @@ public class TemperatureText extends Text{
     
     
     
-    
+    /**
+     * Constructor for the TemperatureText class.
+     * 
+     * @throws IOException 
+     */
     public TemperatureText() throws IOException{
         DEGREE = "\u00b0" + "C";
         loc = new Locator();
@@ -38,6 +41,13 @@ public class TemperatureText extends Text{
         
     }
     
+    /**
+     * Sets the weather.
+     * 
+     * @param city
+     * @param country
+     * @throws IOException 
+     */
     public void setWeather(String city, String country) throws IOException{
         WeatherFetcher wf = new WeatherFetcher(city, country);
         cityWeather = wf.getData();

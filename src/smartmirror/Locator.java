@@ -14,7 +14,8 @@ import java.net.URL;
 import java.net.URLConnection;
 
 /**
- *
+ * Checks current location based on IP address.
+ * 
  * @author Tyler
  */
 public class Locator {
@@ -27,8 +28,12 @@ public class Locator {
     private String longitude;
     
     
-    
-    Locator() throws IOException{
+    /**
+     * Constructor for the Locator class.
+     * 
+     * @throws IOException 
+     */
+    public Locator() throws IOException{
         
         JsonParser parser = new JsonParser();
         
