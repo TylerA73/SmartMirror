@@ -43,8 +43,12 @@ public class SmartMirror extends Application {
         DigitalClock timeText = new DigitalClock();
         DateDisplay dateText = new DateDisplay();
         TemperatureText temp = new TemperatureText();
+        NewsText news = new NewsText();
+        
         
         FlowPane top = new FlowPane();
+        FlowPane right = new FlowPane();
+        right.setOrientation(Orientation.VERTICAL);
         top.setOrientation(Orientation.VERTICAL);
         
         
@@ -57,8 +61,12 @@ public class SmartMirror extends Application {
         top.getChildren().add(dateText);
         top.getChildren().add(new Text("\n"));
         top.getChildren().add(temp);
+        right.getChildren().add(news);
+        
         
         root.setTop(top);
+        root.setRight(right);
+        
         
         Scene scene = new Scene(root, 500, 500);
         

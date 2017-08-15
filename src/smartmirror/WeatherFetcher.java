@@ -81,7 +81,10 @@ public class WeatherFetcher {
                 
                 String weather = jo.getAsJsonArray("weather").toString().replaceAll("\"", "");
                 
+             
+                
                 String[] weatherArray = weather.split(",");
+                
                 String desc = new String();
                 for(int i = 0; i < weatherArray.length; i++){
                     if(weatherArray[i].contains("description")){

@@ -43,8 +43,8 @@ class DateDisplay extends Text {
             
             String month = months[date.getTime().getMonth()] + " ";
             
-            String day = date.getTime().getDay() + ", ";
-            
+            String day = date.getTime().getDate() + ", ";
+
             String year = (date.getTime().getYear()+ 1900) + "";
      
             setText("\t\t\t\t" + month + day + year);
