@@ -21,7 +21,7 @@ public enum Weather {
     /**
      * Constructor for the Weather enum.
      * 
-     * @param id    An int intended as the ID of the weather type.
+     * @param id    An integer intended as the ID of the weather type.
      * @param name  String as the name of the weather type (will also add an icon later)
      */
     Weather(int id, String name){

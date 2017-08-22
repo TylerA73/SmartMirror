@@ -14,6 +14,7 @@ public class City {
     private double temperature;
     private double humidity;
     private String description;
+    private int weatherID;
     
     City(){
         
@@ -35,6 +36,10 @@ public class City {
         this.description = desc;
     }
     
+    public void setWeatherID(int id){
+        this.weatherID = id;
+    }
+    
     public String getCity(){
         return city;
     }
@@ -49,5 +54,9 @@ public class City {
     
     public String getDescription(){
         return description;
+    }
+    
+    public int getWeatherID(){
+        return this.weatherID;
     }
 }

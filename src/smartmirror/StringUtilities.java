@@ -26,4 +26,17 @@ class StringUtilities {
 
     return sb.toString();
   }
+  
+  public static String capitalize(String s){
+      String str = new String();
+      String[] words;
+      
+      words = s.split(" ");
+      
+      for(int i = 0; i < words.length; i++){
+          str = str + words[i].substring(0, 1).toUpperCase() + words[i].substring(1) + " ";
+      }
+      
+      return str;
+  }
 }

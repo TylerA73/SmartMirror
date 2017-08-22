@@ -6,27 +6,12 @@
 package smartmirror;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.HPos;
 import javafx.geometry.Orientation;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontPosture;
-import javafx.scene.text.FontWeight;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -42,14 +27,16 @@ public class SmartMirror extends Application {
         
         DigitalClock timeText = new DigitalClock();
         DateDisplay dateText = new DateDisplay();
-        TemperatureText temp = new TemperatureText();
+        TemperatureText tempText = new TemperatureText();
+        WeatherText weatherText = new WeatherText();
         NewsText news = new NewsText();
         
         
-        FlowPane top = new FlowPane();
+        VBox top = new VBox();
         FlowPane right = new FlowPane();
         right.setOrientation(Orientation.VERTICAL);
-        top.setOrientation(Orientation.VERTICAL);
+        
+        top.getChildren().addAll(timeText, dateText, new Text("\n"), tempText, weatherText);
         
         
         
@@ -57,12 +44,8 @@ public class SmartMirror extends Application {
         
         root.setStyle("-fx-background-color: black;");
         
-        top.getChildren().add(timeText);
-        top.getChildren().add(dateText);
-        top.getChildren().add(new Text("\n"));
-        top.getChildren().add(temp);
-        right.getChildren().add(news);
         
+        right.getChildren().add(news);
         
         root.setTop(top);
         root.setRight(right);

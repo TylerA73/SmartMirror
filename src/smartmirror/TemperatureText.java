@@ -20,7 +20,7 @@ import javafx.scene.text.Text;
 public class TemperatureText extends Text{
     Locator loc;
     City cityWeather;
-    String DEGREE;
+    String DEGREES;
     
     
     
@@ -30,10 +30,10 @@ public class TemperatureText extends Text{
      * @throws IOException 
      */
     public TemperatureText() throws IOException{
-        DEGREE = "\u00b0" + "C";
+        DEGREES = "\u00b0" + "C";
         loc = new Locator();
         setWeather(loc.getCity(), loc.getCountry());
-        setText("\t\t" + Integer.toString((int)cityWeather.getTemperature()) + DEGREE);
+        setText("\t\t" + Integer.toString((int)cityWeather.getTemperature()) + DEGREES);
         setFill(Color.WHITE);
         setFont(Font.font("arial", FontWeight.THIN, FontPosture.REGULAR, 50));
         

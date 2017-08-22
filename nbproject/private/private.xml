@@ -3,7 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Awesome/Documents/GitHub/SmartMirror/src/smartmirror/WeatherText.java</file>
+            <file>file:/C:/Users/Awesome/Documents/GitHub/SmartMirror/src/smartmirror/NewsText.java</file>
+            <file>file:/C:/Users/Awesome/Documents/GitHub/SmartMirror/src/smartmirror/WeatherFetcher.java</file>
+            <file>file:/C:/Users/Awesome/Documents/GitHub/SmartMirror/src/smartmirror/City.java</file>
             <file>file:/C:/Users/Awesome/Documents/GitHub/SmartMirror/src/smartmirror/Weather.java</file>
+            <file>file:/C:/Users/Awesome/Documents/GitHub/SmartMirror/src/smartmirror/SmartMirror.java</file>
+            <file>file:/C:/Users/Awesome/Documents/GitHub/SmartMirror/src/smartmirror/StringUtilities.java</file>
+            <file>file:/C:/Users/Awesome/Documents/GitHub/SmartMirror/src/smartmirror/TemperatureText.java</file>
+            <file>file:/C:/Users/Awesome/Documents/GitHub/SmartMirror/src/smartmirror/DailyNews.java</file>
+            <file>file:/C:/Users/Awesome/Documents/GitHub/SmartMirror/src/smartmirror/NewsFetcher.java</file>
         </group>
     </open-files>
 </project-private>
